@@ -1,0 +1,7 @@
+MOV R0, #1
+MOV R1, #1
+
+ANDS R2,R0, #1
+
+TST R0,#1
+TEQ R0,R1

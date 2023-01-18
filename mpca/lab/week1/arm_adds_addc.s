@@ -1,0 +1,23 @@
+.TEXT ; 
+ LDR R0,=A
+ LDR R1,=B
+ LDR R2,=C
+ LDR R3,=D
+
+ LDR R4,[R0]
+ LDR R5,[R1]
+ LDR R6,[R2]
+ LDR R7,[R3]
+
+
+ ADDS R8,R5,R7
+ ADDC R9,R4,R6
+
+ SWI 0x011
+
+.DATA 
+ A: .WORD 0x12345678
+ B: .WORD 0xF1112222
+ C: .WORD 0x11111111
+ D: .WORD 0x22222222
+	; physical end
