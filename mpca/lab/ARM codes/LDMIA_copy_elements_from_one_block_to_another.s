@@ -1,0 +1,14 @@
+.TEXT
+ LDR R0,=A
+ LDR R1,=B
+ MOV R2,#0
+ back: LDMIA R0!,{R3,R4}
+ STMIA R1!,{R3,R4}
+ ADD R2,R2,#1
+ CMP R2,#5
+ BNE back
+ SWI 0x011
+
+.DATA
+ A:.WORD 01,02,03,04,05,01,02,03,04,05
+ B:.WORD 00
