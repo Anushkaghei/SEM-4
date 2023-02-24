@@ -1,0 +1,13 @@
+.DATA
+A: 10,20,30,40,50
+B: 00
+ 
+.TEXT
+	LDR R1,=A
+	LDR R2,[R1]
+
+BACK: ADD R1,R1,#4
+	LDR R3,[R1]
+	CMP R2,R3
+	BGT BACK
+
